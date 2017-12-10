@@ -1,0 +1,8 @@
+apply plugin : 'java'
+apply plugin : 'application'
+
+dependencies {
+    testCompile 'com.h2.database:h2:1.4.196'
+    testCompile 'org.springframework:spring-test:5.0.2.RELEASE'
+    compile 'org.springframework.data:spring-data-jpa:2.0.2.RELEASE'
+}
