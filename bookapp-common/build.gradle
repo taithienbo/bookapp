@@ -1,13 +1,13 @@
-apply plugin: 'java'
-apply plugin: 'application'
-
+apply plugin : 'java'
 
 dependencies {
-    // Use JUnit test framework
-    testCompile 'junit:junit:4.12'
-    compile 'javax.persistence:persistence-api:1.0.2'
+    compile 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.2.Final'
+    compile 'org.springframework:spring-jdbc:5.0.1.RELEASE'
+    compile 'org.springframework.data:spring-data-commons:2.0.2.RELEASE'
+    compile 'org.springframework:spring-context:5.0.2.RELEASE'
 }
 
-// Define the main class for the application
-mainClassName = 'App'
+repositories {
+    jcenter()
+}
 

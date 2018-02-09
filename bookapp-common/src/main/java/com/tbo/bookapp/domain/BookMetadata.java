@@ -1,7 +1,14 @@
 package com.tbo.bookapp.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 /**
  * @author tai
@@ -11,6 +18,8 @@ import javax.persistence.Entity;
 public class BookMetadata
 {
     @Column( name = "ID")
+    @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column( name = "ISBN" )
     private String isbn;
@@ -28,6 +37,9 @@ public class BookMetadata
     private int pageCount;
     @Column( name = "GENRE")
     private String genre;
+
+    @OneToOne( mappedBy = "bookMetadata")
+    private BookContent bookContent;
     
     public Integer getId()
     {
@@ -103,6 +115,39 @@ public class BookMetadata
     public BookMetadata setPublishYear( int publishYear )
     {
         this.publishYear = publishYear;
+        return this;
+    }
+
+    public int getPageCount()
+    {
+        return pageCount;
+    }
+
+    public BookMetadata setPageCount( int pageCount )
+    {
+        this.pageCount = pageCount;
+        return this;
+    }
+
+    public String getGenre()
+    {
+        return genre;
+    }
+
+    public BookMetadata setGenre( String genre )
+    {
+        this.genre = genre;
+        return this;
+    }
+
+    public BookContent getBookContent()
+    {
+        return bookContent;
+    }
+
+    public BookMetadata setBookContent( BookContent bookContent )
+    {
+        this.bookContent = bookContent;
         return this;
     }
 }

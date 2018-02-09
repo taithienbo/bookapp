@@ -15,4 +15,5 @@ include 'api'
 include 'services:webservice'
 */
 
+include ':bookapp-common'
 rootProject.name = 'bookapp-core'

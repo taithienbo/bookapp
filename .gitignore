@@ -14,3 +14,9 @@
 *.iml
 
 target
+
+#Gradle
+.gradletasknamecache
+.gradle/
+build/
+bin/

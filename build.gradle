@@ -2,6 +2,7 @@ allprojects {
     "repositories" {
         jcenter()
     }
+    apply plugin : 'java'
 }
 
 subprojects {
