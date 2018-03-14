@@ -1,13 +1,6 @@
-apply plugin : 'java'
-
 dependencies {
     compile 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.2.Final'
     compile 'org.springframework:spring-jdbc:5.0.1.RELEASE'
     compile 'org.springframework.data:spring-data-commons:2.0.2.RELEASE'
     compile 'org.springframework:spring-context:5.0.2.RELEASE'
 }
-
-repositories {
-    jcenter()
-}
-

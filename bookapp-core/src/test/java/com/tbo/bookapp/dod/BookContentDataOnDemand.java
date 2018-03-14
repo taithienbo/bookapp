@@ -19,6 +19,11 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.sql.Blob;
 import java.sql.SQLException;
+
+import java.net.URL;
+import java.sql.Blob;
+import java.sql.SQLException;
+import java.util.Enumeration;
 import javax.sql.rowset.serial.SerialBlob;
 import javax.sql.rowset.serial.SerialException;
 
@@ -64,8 +69,8 @@ public class BookContentDataOnDemand extends AppDataOnDemandImpl<BookContent, In
     {
         try
         {
-            InputStream inputStream = context.getResource( "classpath://files/pdf-sample.pdf" )
-                    .getInputStream();
+            InputStream inputStream = context.getResource( "pdf-sample.pdf" ).getInputStream();
+
             byte[] content = new byte[inputStream.available()];
             inputStream.read( content );
             return new SerialBlob( content );
